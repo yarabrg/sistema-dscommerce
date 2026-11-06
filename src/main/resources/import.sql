@@ -1,0 +1,71 @@
+INSERT INTO tb_category(name) VALUES ('Livros');
+INSERT INTO tb_category(name) VALUES ('Eletrônicos');
+INSERT INTO tb_category(name) VALUES ('Computadores');
+
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('The Lord of the Rings', 90.5, 'Edição de colecionador da obra-prima de J.R.R. Tolkien, capa dura com ilustrações exclusivas e mapa detalhado da Terra Média.', 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('Smart TV', 2190.0, 'Smart TV LED de 55 polegadas com resolução 4K UHD, HDR10, sistema operacional inteligente e bordas ultrafinas para máxima imersão.', 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('Macbook Pro', 1250.0, 'Notebook Apple de alto desempenho equipado com chip M-series, tela Retina de alta definição, teclado retroiluminado e bateria de longa duração.', 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer', 1200.0, 'Computador de alta performance para jogos e produtividade, equipado com processador multicore, placa de vídeo dedicada e excelente fluxo de ar.', 'https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('Rails for Dummies', 100.99, 'Guia prático e definitivo para o desenvolvimento web ágil com Ruby on Rails, ideal para iniciantes e desenvolvedores que buscam produtividade.', 'https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Ex', 1350.0, 'Setup gamer avançado com iluminação RGB personalizável, excelente refrigeração e componentes de última geração para rodar os principais lançamentos.', 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer X', 1350.0, 'Máquina robusta projetada para jogos competitivos e multitarefa pesada, oferecendo velocidade e estabilidade em qualquer situação.', 'https://images.unsplash.com/photo-1616588589673-31b3dd847c3c?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Alfa', 1850.0, 'Computador gamer de alto desempenho com placa de vídeo avançada, SSD de alta velocidade e design moderno focado em refrigeração eficiente.', 'https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Tera', 1950.0, 'Estação de trabalho e jogos de altíssima performance, combinando poder de processamento extremo com acabamento premium.', 'https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Y', 1700.0, 'Equipamento otimizado para gamers exigentes, proporcionando excelente taxa de quadros e gráficos fluidos em resolução máxima.', 'https://images.unsplash.com/photo-1526738549149-8e07eca6c147?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Nitro', 1450.0, 'PC gamer equilibrado com excelente custo-benefício, pronto para encarar jogos pesados e tarefas de criação de conteúdo.', 'https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Card', 1850.0, 'Configuração otimizada para entusiastas de jogos e aplicações gráficas, contando com componentes selecionados para máxima durabilidade.', 'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Plus', 1350.0, 'Versão aprimorada voltada para performance contínua, com sistema de ventilação otimizado e visual moderno.', 'https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Hera', 2250.0, 'Setup de categoria superior com acabamento refinado e hardware de ponta para quem busca potência máxima sem comprometer a estabilidade.', 'https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Weed', 2200.0, 'Sistema gamer personalizado com componentes de alto rendimento e visual marcante para o seu ambiente.', 'https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Max', 2340.0, 'Potência máxima em processamento e gráficos para rodar qualquer jogo na qualidade ultra sem gargalos.', 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Turbo', 1280.0, 'Equipamento veloz e responsivo, ideal tanto para sessões intensas de jogos quanto para o trabalho diário.', 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Hot', 1450.0, 'Modelo de alto fluxo de ar e refrigeração avançada, mantendo as temperaturas baixas mesmo sob uso extremo.', 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Ez', 1750.0, 'Plataforma estável e potente para iniciar no mundo dos games com excelente desempenho e margem para futuros upgrades.', 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Tr', 1650.0, 'Configuração moderna pensada para entregar alta taxa de quadros e fluidez em jogos competitivos.', 'https://images.unsplash.com/photo-1563770660941-20978e870e26?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Tx', 1680.0, 'Setup versátil com excelente desempenho multitarefa e componentes de alta confiabilidade.', 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Er', 1850.0, 'Máquina robusta com foco em estabilidade, velocidade de carregamento e ótima experiência visual.', 'https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Min', 2250.0, 'Formato compacto sem abrir mão da potência, ideal para quem busca economia de espaço e alto desempenho.', 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Boo', 2350.0, 'Estação gamer de alto padrão equipada com componentes de última geração e visual agressivo.', 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=800&q=80');
+INSERT INTO tb_product (name, price, description, img_url) VALUES ('PC Gamer Foo', 4170.0, 'A máquina definitiva para entusiastas que buscam desempenho absoluto, sem concessões em gráficos ou velocidade.', 'https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=800&q=80');
+
+INSERT INTO tb_product_category (product_id, category_id) VALUES (1, 1);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (2, 2);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (2, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (3, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (4, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (5, 1);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (6, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (7, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (8, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (9, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (10, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (11, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (12, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (13, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (14, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (15, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (16, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (17, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (18, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (19, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (20, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (21, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (22, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (23, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (24, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 3);
+
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Maria Brown', 'maria@gmail.com', '988888888', '123456', '2001-07-25');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Alex Green', 'alex@gmail.com', '977777777', '123456', '1987-12-13');
+
+INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2026-11-05T13:00:00Z', 'PAID', 1);
+INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2026-11-01T15:50:00Z', 'SHIPPED', 2);
+INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2026-11-06T14:20:00Z', 'WAITING_PAYMENT', 1);
+
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 1, 2, 90.5);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 3, 1, 1250.0);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (2, 3, 1, 1250.0);
+INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3, 1, 1, 90.5);
+
+INSERT INTO tb_payment (order_id, moment) VALUES (1, TIMESTAMP WITH TIME ZONE '2026-11-05T15:00:00Z');
+INSERT INTO tb_payment (order_id, moment) VALUES (2, TIMESTAMP WITH TIME ZONE '2026-11-02T11:00:00Z');

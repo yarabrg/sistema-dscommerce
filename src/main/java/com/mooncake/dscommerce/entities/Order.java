@@ -28,8 +28,7 @@ public class Order {
     @JoinColumn(name = "client_id")
     private User client;
 
-    @OneToOne
-    @MapsId
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
 
     @OneToMany(mappedBy = "id.order")
