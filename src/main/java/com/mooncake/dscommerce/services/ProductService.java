@@ -16,29 +16,42 @@ public class ProductService {
     private final ProductRepository repository;
     private final ModelMapper modelMapper;
 
-    public ProductService(ProductRepository repository, ModelMapper modelMapper){
+    public ProductService(ProductRepository repository, ModelMapper modelMapper) {
         this.repository = repository;
         this.modelMapper = modelMapper;
 
     }
 
     @Transactional(readOnly = true)
-    public ProductDTO findById(Long id){
-        Product product = repository.findById(id)
+    public ProductDTO findById(Long id) {
+        Product entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Produto não encontrado para o ID: " + id));
-        return modelMapper.map(product, ProductDTO.class);
+        return modelMapper.map(entity, ProductDTO.class);
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(Pageable pageable){
-        Page<Product> product = repository.findAll(pageable);
-        return product.map(x -> modelMapper.map(x, ProductDTO.class));
+    public Page<ProductDTO> findAll(Pageable pageable) {
+        Page<Product> entity = repository.findAll(pageable);
+        return entity.map(x -> modelMapper.map(x, ProductDTO.class));
     }
 
     @Transactional
-    public ProductDTO insert(ProductDTO dto){
+    public ProductDTO insert(ProductDTO dto) {
         Product entity = repository.save(modelMapper.map(dto, Product.class));
         return modelMapper.map(entity, ProductDTO.class);
+    }
+
+    @Transactional
+    public ProductDTO update(ProductDTO dto, Long id) {
+
+        Product entity = repository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException(
+                        "Produto não encontrado para o ID: " + id));
+        modelMapper.typeMap(ProductDTO.class, Product.class)
+                .addMappings(mapper -> mapper.skip(Product::setId));
+        modelMapper.map(dto, entity);
+        return modelMapper.map(entity, ProductDTO.class);
+
     }
 }
