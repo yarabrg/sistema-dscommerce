@@ -3,8 +3,10 @@ package com.mooncake.dscommerce.services;
 import com.mooncake.dscommerce.dto.ProductDTO;
 import com.mooncake.dscommerce.entities.Product;
 import com.mooncake.dscommerce.repositories.ProductRepository;
+import com.mooncake.dscommerce.services.exceptions.DatabaseException;
 import com.mooncake.dscommerce.services.exceptions.ResourceNotFoundException;
 import org.modelmapper.ModelMapper;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -52,6 +54,18 @@ public class ProductService {
                 .addMappings(mapper -> mapper.skip(Product::setId));
         modelMapper.map(dto, entity);
         return modelMapper.map(entity, ProductDTO.class);
+    }
 
+    @Transactional()
+    public void delete(Long id){
+        if(!repository.existsById(id)){
+            throw new ResourceNotFoundException("Produto não encontrado para o ID: " + id);
+        }
+        try {
+            repository.deleteById(id);
+            repository.flush();
+        } catch (DataIntegrityViolationException e) {
+            throw new DatabaseException("Falha na integridade referencial");
+        }
     }
 }
