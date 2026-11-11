@@ -1,7 +1,9 @@
 package com.mooncake.dscommerce.entities;
 
 import jakarta.persistence.*;
-import org.hibernate.boot.models.annotations.spi.ColumnDetails;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.Size;
 
 import java.util.HashSet;
 import java.util.List;
@@ -19,6 +21,7 @@ public class Product {
 
     @Column(columnDefinition = "TEXT")
     private String description;
+
     private Double price;
     private String imgUrl;
 
