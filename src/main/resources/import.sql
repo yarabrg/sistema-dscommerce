@@ -55,8 +55,31 @@ INSERT INTO tb_product_category (product_id, category_id) VALUES (23, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (24, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 3);
 
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Maria Brown', 'maria@gmail.com', '988888888', '123456', '2001-07-25');
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Alex Green', 'alex@gmail.com', '977777777', '123456', '1987-12-13');
+INSERT INTO tb_role (authority) VALUES ('ROLE_CLIENT');
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
+
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Valerie (V)', 'v.valerie@nightcity.net', '8899112233', '$2a$10$e38.K1t4a6o5r3vX2b8W.uP9Z5Q7K1t4a6o5r3vX2b8W.uP9Z5Q7K', '1995-10-12');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Judy Alvarez', 'judy@braindance.nc', '8899223344', '$2a$10$e38.K1t4a6o5r3vX2b8W.uP9Z5Q7K1t4a6o5r3vX2b8W.uP9Z5Q7K', '1999-06-15');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Johnny Silverhand', 'silverhand@samurai.rock', '8899334455', '$2a$10$e38.K1t4a6o5r3vX2b8W.uP9Z5Q7K1t4a6o5r3vX2b8W.uP9Z5Q7K', '1988-11-16');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Panam Palmer', 'panam@aldecaldos.nom', '8899445566', '$2a$10$e38.K1t4a6o5r3vX2b8W.uP9Z5Q7K1t4a6o5r3vX2b8W.uP9Z5Q7K', '1993-09-03');
+INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Viktor Vektor', 'vik@ripperdoc.nc', '8899556677', '$2a$10$e38.K1t4a6o5r3vX2b8W.uP9Z5Q7K1t4a6o5r3vX2b8W.uP9Z5Q7K', '1974-04-20');
+
+-- Valerie (V) - CLIENT e ADMIN
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (1, 2);
+
+-- Judy Alvarez - CLIENT e ADMIN
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 1);
+INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
+
+-- Johnny Silverhand - Apenas CLIENT
+INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
+
+-- Panam Palmer - Apenas CLIENT
+INSERT INTO tb_user_role (user_id, role_id) VALUES (4, 1);
+
+-- Viktor Vektor - Apenas CLIENT
+INSERT INTO tb_user_role (user_id, role_id) VALUES (5, 1);
 
 INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2026-11-05T13:00:00Z', 'PAID', 1);
 INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2026-11-01T15:50:00Z', 'SHIPPED', 2);
