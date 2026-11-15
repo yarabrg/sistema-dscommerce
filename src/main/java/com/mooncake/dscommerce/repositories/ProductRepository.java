@@ -1,10 +1,13 @@
 package com.mooncake.dscommerce.repositories;
 
 import com.mooncake.dscommerce.entities.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.List;
+import org.springframework.data.jpa.repository.Query;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
-    List<Product> id(Long id);
+
+    @Query("SELECT obj FROM Product obj WHERE UPPER(obj.name) LIKE UPPER(CONCAT('%', :name, '%'))")
+    Page<Product> searchByName(String name, Pageable pageable);
 }
