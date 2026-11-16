@@ -26,7 +26,7 @@ public class ProductDTO {
     private String imgUrl;
 
     @NotEmpty(message =  "Pelo menos uma categoria deve ser adicionada")
-    Set<CategoryDTO> categories = new HashSet<>();
+    private Set<CategoryDTO> categories = new HashSet<>();
 
     public ProductDTO() {
     }

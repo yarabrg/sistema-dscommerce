@@ -12,7 +12,7 @@ public class UserDTO {
     private String phone;
     private LocalDate birthDate;
 
-    List<String> roles = new ArrayList<>();
+    private List<String> roles = new ArrayList<>();
 
     public UserDTO() {
     }
