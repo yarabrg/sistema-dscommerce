@@ -1,9 +1,13 @@
 package com.mooncake.dscommerce.dto;
 
-import com.mooncake.dscommerce.entities.Product;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ProductDTO {
 
@@ -20,6 +24,9 @@ public class ProductDTO {
     @Positive(message = "O preço deve ser positivo")
     private Double price;
     private String imgUrl;
+
+    @NotEmpty(message =  "Pelo menos uma categoria deve ser adicionada")
+    Set<CategoryDTO> categories = new HashSet<>();
 
     public ProductDTO() {
     }
@@ -70,5 +77,13 @@ public class ProductDTO {
 
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
+    }
+
+    public Set<CategoryDTO> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(Set<CategoryDTO> categories) {
+        this.categories = categories;
     }
 }

@@ -4,10 +4,10 @@ import com.mooncake.dscommerce.dto.ProductDTO;
 import com.mooncake.dscommerce.dto.UserDTO;
 import com.mooncake.dscommerce.entities.Role;
 import com.mooncake.dscommerce.entities.User;
+import com.mooncake.dscommerce.mappers.UserMapper;
 import com.mooncake.dscommerce.projections.UserDetailsProjection;
 import com.mooncake.dscommerce.repositories.UserRepository;
 import org.jspecify.annotations.NonNull;
-import org.modelmapper.ModelMapper;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,11 +23,11 @@ import java.util.List;
 public class UserService implements UserDetailsService {
 
     private final UserRepository repository;
-    private final ModelMapper modelMapper;
+    private final UserMapper userMapper;
 
-    public UserService (UserRepository repository, ModelMapper modelMapper) {
+    public UserService(UserRepository repository, UserMapper userMapper) {
         this.repository = repository;
-        this.modelMapper = modelMapper;
+        this.userMapper = userMapper;
     }
 
     @Override
@@ -68,9 +68,6 @@ public class UserService implements UserDetailsService {
     @Transactional(readOnly = true)
     public UserDTO getLoggedUser() {
         User user = authenticated();
-        UserDTO dto = modelMapper.map(user, UserDTO.class);
-        dto.setRoles(user.getRoles().stream().map(Role::getAuthority).toList());
-
-        return dto;
+        return userMapper.toDTO(user);
     }
 }
