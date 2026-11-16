@@ -1,6 +1,7 @@
 package com.mooncake.dscommerce.dto;
 
 import com.mooncake.dscommerce.entities.enums.OrderStatus;
+import jakarta.validation.constraints.NotEmpty;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -15,6 +16,7 @@ public class OrderDTO {
     private ClientDTO client;
     private PaymentDTO payment;
 
+    @NotEmpty(message =  "Pelo menos um item deve ser adicionado")
     private List<OrderItemDTO> items = new ArrayList<>();
 
     public OrderDTO() {
