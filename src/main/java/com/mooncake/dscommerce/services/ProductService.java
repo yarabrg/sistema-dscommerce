@@ -1,6 +1,7 @@
 package com.mooncake.dscommerce.services;
 
 import com.mooncake.dscommerce.dto.ProductDTO;
+import com.mooncake.dscommerce.dto.ProductMinDTO;
 import com.mooncake.dscommerce.entities.Product;
 import com.mooncake.dscommerce.repositories.ProductRepository;
 import com.mooncake.dscommerce.services.exceptions.DatabaseException;
@@ -33,9 +34,9 @@ public class ProductService {
     }
 
     @Transactional(readOnly = true)
-    public Page<ProductDTO> findAll(String name, Pageable pageable) {
+    public Page<ProductMinDTO> findAll(String name, Pageable pageable) {
         Page<Product> entity = repository.searchByName(name, pageable);
-        return entity.map(x -> modelMapper.map(x, ProductDTO.class));
+        return entity.map(x -> modelMapper.map(x, ProductMinDTO.class));
     }
 
     @Transactional
