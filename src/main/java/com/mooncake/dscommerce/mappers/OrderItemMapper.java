@@ -10,5 +10,6 @@ public interface OrderItemMapper {
 
     @Mapping(target = "productId", source = "product.id")
     @Mapping(target = "name", source = "product.name")
+    @Mapping(target = "imgUrl", source = "product.imgUrl")
     OrderItemDTO toDTO(OrderItem entity);
 }

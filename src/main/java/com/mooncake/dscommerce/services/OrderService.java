@@ -24,6 +24,7 @@ public class OrderService {
     private final ProductRepository productRepository;
     private final OrderItemRepository orderItemRepository;
     private final UserService userService;
+    private final AuthService authService;
     private final OrderMapper orderMapper;
 
     public OrderService(
@@ -31,12 +32,14 @@ public class OrderService {
             ProductRepository productRepository,
             OrderItemRepository orderItemRepository,
             UserService userService,
+            AuthService authService,
             OrderMapper orderMapper) {
 
         this.repository = repository;
         this.productRepository = productRepository;
         this.orderItemRepository = orderItemRepository;
         this.userService = userService;
+        this.authService = authService;
         this.orderMapper = orderMapper;
     }
 
@@ -45,6 +48,8 @@ public class OrderService {
         Order entity = repository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException(
                         "Pedido não encontrado para o ID: " + id));
+
+        authService.validateSelfOrAdmin(entity.getClient().getId());
         return orderMapper.toDTO(entity);
     }
 

@@ -3,6 +3,7 @@ package com.mooncake.dscommerce.controllers.handlers;
 import com.mooncake.dscommerce.dto.CustomError;
 import com.mooncake.dscommerce.dto.ValidationError;
 import com.mooncake.dscommerce.services.exceptions.DatabaseException;
+import com.mooncake.dscommerce.services.exceptions.ForbiddenException;
 import com.mooncake.dscommerce.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
@@ -39,6 +40,13 @@ public class ControllerExceptionHandler {
             err.addError(f.getField(), f.getDefaultMessage());
         }
 
+        return ResponseEntity.status(status).body(err);
+    }
+
+    @ExceptionHandler(ForbiddenException.class)
+    public ResponseEntity<CustomError> forbidden(ForbiddenException e, HttpServletRequest request) {
+        HttpStatus status = HttpStatus.FORBIDDEN;
+        CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
         return ResponseEntity.status(status).body(err);
     }
 }
