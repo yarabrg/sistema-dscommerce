@@ -1,6 +1,5 @@
 package com.mooncake.dscommerce.services;
 
-import com.mooncake.dscommerce.dto.ProductDTO;
 import com.mooncake.dscommerce.dto.UserDTO;
 import com.mooncake.dscommerce.entities.Role;
 import com.mooncake.dscommerce.entities.User;
@@ -39,7 +38,6 @@ public class UserService implements UserDetailsService {
         }
 
         User user = new User();
-        user.setId(result.getFirst().getId());
         user.setEmail(result.getFirst().getUsername());
         user.setPassword(result.getFirst().getPassword());
         for(UserDetailsProjection projection : result) {

@@ -75,7 +75,7 @@ public class CustomPasswordAuthenticationProvider implements AuthenticationProvi
 
 		//-----------Create a new Security Context Holder Context----------
 		OAuth2ClientAuthenticationToken oAuth2ClientAuthenticationToken = (OAuth2ClientAuthenticationToken) SecurityContextHolder.getContext().getAuthentication();
-		CustomUserAuthorities customPasswordUser = new CustomUserAuthorities(((User) user).getId(), username, user.getAuthorities());
+		CustomUserAuthorities customPasswordUser = new CustomUserAuthorities( username, user.getAuthorities());
 		oAuth2ClientAuthenticationToken.setDetails(customPasswordUser);
 		
 		var newcontext = SecurityContextHolder.createEmptyContext();

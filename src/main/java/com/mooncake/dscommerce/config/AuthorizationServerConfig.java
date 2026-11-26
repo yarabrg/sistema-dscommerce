@@ -58,6 +58,9 @@ public class AuthorizationServerConfig {
 	@Value("${security.jwt.duration}")
 	private Integer jwtDurationSeconds;
 
+	@Value("${security.issuer}")
+	private String issuer;
+
 	@Autowired
 	private UserDetailsService userDetailsService;
 
@@ -129,7 +132,9 @@ public class AuthorizationServerConfig {
 
 	@Bean
 	public AuthorizationServerSettings authorizationServerSettings() {
-		return AuthorizationServerSettings.builder().build();
+		return AuthorizationServerSettings.builder()
+				.issuer(issuer)
+				.build();
 	}
 
 	@Bean
@@ -151,8 +156,7 @@ public class AuthorizationServerConfig {
 				// @formatter:off
 				context.getClaims()
 						.claim("authorities", authorities)
-					    .claim("username", user.getUsername())
-						.claim("userId", user.getUserId());
+					    .claim("username", user.getUsername());
 				// @formatter:on
 			}
 		};
